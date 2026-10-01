@@ -13,7 +13,7 @@ import concurrent.futures as future
 from statistics import mean
 from time import perf_counter as pc
 import numpy as np
-from numba import njit
+# from numba import njit
 # import multiprocessing as mp
 import concurrent.futures as future 
 
@@ -117,7 +117,7 @@ def hypersphere_exact(n, d):
 
 # Exc3: numba version
 
-@njit
+# @njit
 def sphere_volume_numba(n: int, d: int) -> float:
 
     n_random_points = [[random.uniform(-1, 1) for j in range(d)] for i in range(n) ]
@@ -267,4 +267,4 @@ if __name__ == '__main__':
 
 
 
-#alcr1041@gullviva.it.uu.se
+#ssh alcr1041@gullviva.it.uu.se
