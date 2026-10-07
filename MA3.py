@@ -174,26 +174,14 @@ d = 11
 
 
 def sphere_volume_parallel(n, d, number_process=10):
-    # n is the number of points
-    # d is the number of dimensions of the sphere
-    # np is the number of processes
-
 
     print("Began the parallel copmuting")
     with future.ProcessPoolExecutor() as ex:
-        # processes_list = [[n, d] for j in range(np)]
-        # print(f"processes_list={processes_list}")
-
-        # processes_list = [1, 2, 3]
         results_2_map = ex.map(sphere_volume, [n // number_process]*(number_process), [d]*number_process)
 
         print("Finished the parallel copmuting")
-        # V_par_approx = sum(results_2_map)
         V_par_approx = mean(results_2_map)
-        # for r in results_2_map:
-        #     print(f"r = {r}")
 
-    
     return V_par_approx
 
 
